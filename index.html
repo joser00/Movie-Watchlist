@@ -1,12 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movie Watchlist</title>
-</head>
-<body>
-    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container" id="main-header">
+        <div class="options">
+          <h1>Find your film</h1>
+          <a href="watchlist.html" id="watchlist">My Watchlist</a>
+        </div>
+        <form id="movie-form" class="subcontainer">
+          <input
+            type="search"
+            name="searchMovie"
+            id="search-movie"
+            placeholder="Search for a movie"
+          />
+          <button id="search-btn">Search</button>
+          <i class="fa-solid fa-magnifying-glass" id="search-tool"></i>
+        </form>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div class="movie-container" id="movie-container">
+<!--          
+          <i class="fa-solid fa-film" id="logo-movie"></i>
+                <h2>Start Exploring</h2> -->
+        </div>
+      </div>
+    </main>
     <script src="javascript.js" type="module"></script>
-</body>
+  </body>
 </html>
