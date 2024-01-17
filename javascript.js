@@ -2,7 +2,7 @@ let stringMovies = "";
 const movieForm = document.getElementById("movie-form");
 const movieContainer = document.getElementById("movie-container")
 const inputMovie = document.getElementById("search-movie")
-let movieItem = []
+const movieItem = JSON.parse(localStorage.getItem('movie')) || [];
 function getMovies() {
   movieForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -55,18 +55,16 @@ function getMovies() {
     inputMovie.value = "";
   });
 }
-
-getMovies();
-
 function addMovie() {
-  
-  document.addEventListener('click', (e)=> {
-    if(e.target.dataset.watchlist){
-      movieItem.push(e.target.dataset.watchlist)
-      localStorage.setItem('movie',JSON.stringify(movieItem))
+  document.addEventListener('click', (e) => {
+    if (e.target.dataset.watchlist) {
+      const movieID = e.target.dataset.watchlist;
+      if (!movieItem.includes(movieID)) {
+        movieItem.push(movieID);
+        localStorage.setItem('movie', JSON.stringify(movieItem));
+      }
     }
-  })
-  return movieItem
+  });
 }
-
+getMovies();
 addMovie()
