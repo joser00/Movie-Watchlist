@@ -5,17 +5,21 @@ body {
     padding: 0;
     margin: 0;
     height: 100vh;
+    width: 100vw;
     font-family: 'Work Sans', sans-serif;
+}
+header {
+    height: 20vh;
+    width: 100vw;
+    
+}
+main {
+    max-height: 80vh;
+    width: 100vw;
 }
 .container {
     margin: 0 auto;
     max-width: 800px;
-}
-header {
-    height: 20vh;
-}
-main {
-    max-height: 80vh;
 }
 #main-header {
     display: flex;
@@ -36,17 +40,19 @@ main {
 }
 #watchlist,#main-header h1   {
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: rgb(254, 245, 0);
+    background-color: black;
     padding: 0.5em;
     border-radius: 5px;
-    background-color: #DFDDDD;
     font-weight: bolder;
-    text-shadow: 0 0 0 4px rgb(255, 255, 255);
+    text-shadow: 0 0 0 10px rgb(254, 245, 0);
+}
+#watchlist:hover {
+    box-shadow: 0 0 5px rgb(226, 226, 183);
 }
 #movie-form {
     position: relative;
     top: 25px;
-    max-width: 70vw;
 }
 #movie-form button {
     position: absolute;
@@ -58,9 +64,12 @@ main {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
+#movie-form button:hover {
+    cursor: pointer;
+}
 #search-movie{
     padding: 0.75em;
-    width: 40vw;
+    width: 500px;
     text-indent: 25px;
     border: none;
     outline: none;
@@ -76,7 +85,7 @@ main {
 .movie-container {
     margin: 0 auto;
     max-width: 50vw;
-    margin-top: 7rem;
+    margin-top: 5rem;
 }
 .movie {
     display: flex;
@@ -87,18 +96,33 @@ main {
     margin-bottom: 1em;
     margin-top: 1em;
 }
+
 .movie img {
     width: 100px;
+    box-shadow: 0 0 5px rgb(121, 120, 120);
+    border-radius: 5%;
 }
 .options-movie {
     display: flex;
     gap:1em;
+}
+#watchlist-btn {
+    background-color: black;
+    padding: 0.25em;
+    color: whitesmoke;
+    border-radius: 20%;
+}
+#watchlist-btn:hover {
+    cursor: pointer;
+    background-color: #6B7280;
+    transition: 0.25s;
 }
 .features p, h3 {
     margin: 0.5em 0;
 }
 hr {
     color: #DFDDDD;
+    width: 100%;
 }
 span {
     font-size: 0.9rem;
@@ -107,4 +131,35 @@ span {
     color: rgb(236, 221, 19);
     font-size: 0.9rem;
     margin-left: 2em;
+}
+.advice {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #DFDDDD;
+
+}
+.advice i {
+    font-size: 4rem;
+    align-self: center;
+}
+.advice h2 {
+    align-self: center;
+}
+#advice-container {
+    color: black;
+}
+#advice-container i {
+    font-size:1rem ;
+}
+#add-btn {
+    font-size: 1rem;
+    color: whitesmoke;
+    background-color: black;
+    border-radius: 50%;
+    padding: 0.25em;
+    margin-right: 1em;
+}
+#add-span {
+    color: black;
 }
