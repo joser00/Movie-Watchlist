@@ -13,18 +13,15 @@ function getMovies() {
     fetch(`http://www.omdbapi.com/?apikey=c6ecc1d3&s=${nameMovie}&type=movie`)
       .then((data) => data.json())
       .then((response) => {
-        
-        for (let movie of response.Search) {
-          fetch(
-            `http://www.omdbapi.com/?apikey=c6ecc1d3&i=${movie.imdbID}&type=movie&plot=short`
-          )
+        if(response.Search === undefined){
+          movieContainer.innerHTML = `<h1 id='unable'>Unable to find what you’re looking for. Please try another search.</h1>`
+        }else {
+          for (let movie of response.Search) {
+            fetch(
+              `http://www.omdbapi.com/?apikey=c6ecc1d3&i=${movie.imdbID}&type=movie&plot=short`
+            )
             .then((response2) => response2.json())
             .then((data) => {
-              if (data.Poster === "N/A") {
-                console.log(
-                 "El poster no esta disponible"
-                );
-              } else {
                 stringMovies += `
                 <div class="movie">
                 <img src=${data.Poster} alt="Image of the movie" /> 
@@ -46,11 +43,13 @@ function getMovies() {
                 </div> 
                 <hr/>
                 `;
-              }
+              
               movieContainer.innerHTML =stringMovies;
             });
           stringMovies = "";
         }
+        }
+       
       });
     inputMovie.value = "";
   });

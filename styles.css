@@ -11,11 +11,12 @@ body {
 header {
     height: 20vh;
     width: 100vw;
-    
+    text-align: center;
 }
 main {
     max-height: 80vh;
     width: 100vw;
+    padding: 3.5em;
 }
 .container {
     margin: 0 auto;
@@ -83,9 +84,9 @@ main {
     color: #6B7280;
 }
 .movie-container {
-    margin: 0 auto;
+    margin: 1em auto;
     max-width: 50vw;
-    margin-top: 5rem;
+    padding: 1em;
 }
 .movie {
     display: flex;
@@ -145,6 +146,7 @@ span {
 }
 .advice h2 {
     align-self: center;
+    text-align: center;
 }
 #advice-container {
     color: black;
@@ -163,4 +165,8 @@ span {
 #add-span {
     color: black;
     align-self: center;
+}
+#unable {
+    color: #DFDDDD;
+    text-align: center;
 }
